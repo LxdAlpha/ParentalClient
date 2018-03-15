@@ -45,6 +45,13 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedLister
     }
 
     @Override
+    public void onError(String errorMsg) {
+        if(loginView != null){
+            loginView.showError(errorMsg);
+        }
+    }
+
+    @Override
     public void validateCredentials(User user) {
         if(loginView != null){
             loginView.showProgress();

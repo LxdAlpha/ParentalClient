@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!-- 半透明颜色值 -->
+    <color name="RlBg">#e0000000</color>
+    <!-- 透明颜色值 -->
+    <color name="RlBg2">#00000000</color>
+    <!-- 白色颜色值 -->
+    <color name="white">#ffffff</color>
+    <color name="babyblue">#1eddff</color>
+
 </resources>

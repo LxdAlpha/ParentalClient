@@ -8,4 +8,5 @@ public interface OnLoginFinishedListerner {
     void onUserNameError();
     void onPasswordError();
     void onSuccess();
+    void onError(String errorMsg);
 }
