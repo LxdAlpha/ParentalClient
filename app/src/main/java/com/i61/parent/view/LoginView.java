@@ -10,4 +10,5 @@ public interface LoginView {
     void setUserNameError();
     void setPasswordError();
     void showSuccess();
+    void showError(String errorMsg);
 }
