@@ -27,4 +27,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //网络库-张鸿洋的okHttp封装库
+    compile 'com.zhy:okhttputils:2.6.2'
+    //Gson
+    compile 'com.google.code.gson:gson:2.7'
+    //控件依赖注入
+    compile 'com.jakewharton:butterknife:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    //一个android的orm 和 ioc 框架
+    compile 'org.kymjs.kjframe:kjframe:2.6'
+    //导入kesarlibrary工具包
+    compile project(':kesarlibrary')
+
 }

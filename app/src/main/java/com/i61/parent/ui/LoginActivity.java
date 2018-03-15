@@ -65,15 +65,15 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         presenter.validateCredentials(user);
     }
 
-    @Override
-    public void showProgress() {
-        progressBar.setVisibility(View.VISIBLE);
-    }
+	@Override
+	public void showProgress() {
+		progressBar.setVisibility(View.VISIBLE);
+	}
 
-    @Override
-    public void hideProgress() {
-        progressBar.setVisibility(View.GONE);
-    }
+	@Override
+	public void hideProgress() {
+		progressBar.setVisibility(View.GONE);
+	}
 
     @Override
     public void setUserNameError() {
@@ -85,17 +85,22 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         password.setError("请填写密码");
     }
 
-    @Override
-    public void showSuccess() {
-        progressBar.setVisibility(View.GONE);
-        Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show();
+	@Override
+	public void showSuccess() {
+		progressBar.setVisibility(View.GONE);
+		Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show();
+	}
     }
 
-    @Override
-    protected void onDestroy() {
-        presenter.onDestroy();
-        super.onDestroy();
-    }
+	@Override
+	public void showError(String errorMsg) {
+		progressBar.setVisibility(View.GONE);
+		Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show();
+	}
 
-
+	@Override
+	protected void onDestroy() {
+		presenter.onDestroy();
+		super.onDestroy();
+	}
 }
