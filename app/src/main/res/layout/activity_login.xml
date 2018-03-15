@@ -1,36 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eeeeee"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="UserName"
-        android:maxLines="1" />
+    <include layout="@layout/actionbar_layout"/>
 
-    <EditText
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/login_logo"/>
+
+    <TextView
         android:layout_width="match_parent"
-        android:id="@+id/password"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:maxLines="1"
-        tools:ignore="TextFields" />
+        android:text="画啦啦学员登录"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="#565151" />
+
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_phone"
+            android:layout_weight="1.2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="手机号:"
+            android:singleLine="true"
+            android:textSize="15sp"
+            android:gravity="left"
+            android:textColor="#565151"/>
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:layout_weight="6"
+            android:textColor="#000000"
+            android:background="@null"
+            android:hint="请输入手机号"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/input_false"
+            android:layout_weight="0.8"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_password"
+            android:layout_weight="1.2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="密 码:"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:gravity="left"
+            android:textColor="#565151"
+            />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:layout_weight="6"
+            android:textColor="#000000"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:inputType="textPassword"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/input_false"
+            android:layout_weight="0.8"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_normal"
+        android:layout_marginTop="30dp"
         android:text="登录"
-        android:layout_gravity="center_horizontal"/>
+        />
 
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 </LinearLayout>
