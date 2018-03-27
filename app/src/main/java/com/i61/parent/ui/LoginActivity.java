@@ -90,7 +90,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 		progressBar.setVisibility(View.GONE);
 		Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show();
 	}
-    }
 
 	@Override
 	public void showError(String errorMsg) {

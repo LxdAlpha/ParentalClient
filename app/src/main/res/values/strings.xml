@@ -8,5 +8,13 @@
     <string name="text_finish">完成</string>
     <string name="is_not_empty">不能为空</string>
     <string name="double_click_exit">再次点击返回键切换到桌面</string>
-
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--Fragment-->
+    <string name="fragment_review">点评</string>
+    <string name="fragment_work">作业</string>
+    <string name="fragment_news">消息</string>
+    <string name="fragment_personal">个人中心</string>
 </resources>

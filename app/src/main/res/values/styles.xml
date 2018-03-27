@@ -35,6 +35,11 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="titlebar_text_menu" parent="titlebar">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
     <style name="titlebar_img" parent="titlebar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
