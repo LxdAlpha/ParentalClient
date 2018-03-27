@@ -10,5 +10,7 @@
     <!-- 白色颜色值 -->
     <color name="white">#ffffff</color>
     <color name="babyblue">#1eddff</color>
+    <!--底部导航栏颜色-->
+    <color name="bar_icon_pressed_color">#f2594b</color>
 
 </resources>

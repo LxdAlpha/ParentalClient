@@ -38,12 +38,12 @@ public class AppApplication extends Application {
 		// 初始化保存活动的activity的栈
 		mActivitiesStack = new Stack<Activity>();
 
-//		OkHttpClient okHttpClient = new OkHttpClient.Builder()
-//				.addInterceptor(new LoggerInterceptor("OkHttp"))
-//				.connectTimeout(10000L, TimeUnit.MILLISECONDS)
-//				.readTimeout(10000L, TimeUnit.MILLISECONDS)
-//				.build();
-//		OkHttpUtils.initClient(okHttpClient);
+		OkHttpClient okHttpClient = new OkHttpClient.Builder()
+				.addInterceptor(new LoggerInterceptor("OkHttp"))
+				.connectTimeout(AppConfig.httpTimeOut, TimeUnit.MILLISECONDS)
+				.readTimeout(AppConfig.httpTimeOut, TimeUnit.MILLISECONDS)
+				.build();
+		OkHttpUtils.initClient(okHttpClient);
 	}
 
 	public static AppApplication getInstance() {
@@ -78,81 +78,70 @@ public class AppApplication extends Application {
 	}
 
 	/**
-	 *  @Description: 将活动的activity压入管理activity的栈中
-	 *  @author lixianhua
-	 *  @time 2018/3/14  15:31
+	 * @Description: 将活动的activity压入管理activity的栈中
+	 * @author lixianhua
+	 * @time 2018/3/14  15:31
 	 */
-	public void pushActivity(Activity activity)
-	{
+	public void pushActivity(Activity activity) {
 		mActivitiesStack.push(activity);
 		KJLoger.debug("已增加aty，剩下" + mActivitiesStack.size());
 	}
 
 	/**
-	 *  @Description: 移除最顶端的activity
-	 *  @author lixianhua
-	 *  @time 2018/3/14  15:38
+	 * @Description: 移除最顶端的activity
+	 * @author lixianhua
+	 * @time 2018/3/14  15:38
 	 */
-	public void popActivity(Activity activity)
-	{
-		if (mActivitiesStack.isEmpty())
-		{
+	public void popActivity(Activity activity) {
+		if (mActivitiesStack.isEmpty()) {
 			return;
 		}
-		if (mActivitiesStack.peek().equals(activity))
-		{
+		if (mActivitiesStack.peek().equals(activity)) {
 			mActivitiesStack.pop();
-		}
-		else
-		{
+		} else {
 			mActivitiesStack.remove(activity);
 		}
 		KJLoger.debug("已移除aty，剩下" + mActivitiesStack.size());
 	}
 
 	/**
-	 *  @Description: 关闭所有activity
-	 *  @author lixianhua
-	 *  @time 2018/3/14  15:39
+	 * @Description: 关闭所有activity
+	 * @author lixianhua
+	 * @time 2018/3/14  15:39
 	 */
-	public void finishAllActivitis()
-	{
-		while (!mActivitiesStack.isEmpty())
-		{
+	public void finishAllActivitis() {
+		while (!mActivitiesStack.isEmpty()) {
 			mActivitiesStack.pop().finish();
 		}
 	}
+
 	/**
-	 *  @Description: 得到栈顶的activity
-	 *  @author lixianhua
-	 *  @time 2018/3/14  16:11
+	 * @Description: 得到栈顶的activity
+	 * @author lixianhua
+	 * @time 2018/3/14  16:11
 	 */
-	public Activity peekActivity()
-	{
-		if (mActivitiesStack.isEmpty())
-		{
+	public Activity peekActivity() {
+		if (mActivitiesStack.isEmpty()) {
 			return null;
 		}
 		return mActivitiesStack.peek();
 	}
 
 	/**
-	 *  @Description: 得到SharedPreferences
-	 *  @author lixianhua
-	 *  @time 2018/3/14  16:11
+	 * @Description: 得到SharedPreferences
+	 * @author lixianhua
+	 * @time 2018/3/14  16:11
 	 */
-	public static SharedPreferences getSharedPreferences(String name)
-	{
+	public static SharedPreferences getSharedPreferences(String name) {
 		return instance.getSharedPreferences(name, MODE_PRIVATE);
 	}
 
 	/**
-	 *  @Description: 得到Notification的管理器
-	 *  @author lixianhua
-	 *  @time 2018/3/14  16:11
+	 * @Description: 得到Notification的管理器
+	 * @author lixianhua
+	 * @time 2018/3/14  16:11
 	 */
-	public static NotificationManager getNotificationManager()
-	{
+	public static NotificationManager getNotificationManager() {
 		return (NotificationManager) instance.getSystemService(NOTIFICATION_SERVICE);
 	}
 }

@@ -10,5 +10,13 @@
     <dimen name="space_65">65dp</dimen>
     <dimen name="space_40">40dp</dimen>
     <dimen name="bottom_long_button">38dp</dimen>
-
+    <!-- BottomNavigation配置 切换时大小不变，普通的切换模式 -->
+    <!--<dimen name="fixed_height">56dp</dimen> &lt;!&ndash; 高度 &ndash;&gt;
+    <dimen name="fixed_icon_grid">24dp</dimen> &lt;!&ndash; icon大小 &ndash;&gt;
+    <dimen name="fixed_height_top_padding_inactive">3dp</dimen> &lt;!&ndash; 未选中时顶部padding &ndash;&gt;
+    <dimen name="fixed_height_top_padding_active">3dp</dimen> &lt;!&ndash; 选中时顶部padding &ndash;&gt;
+    <dimen name="fixed_height_bottom_padding">5dp</dimen> &lt;!&ndash; 底部padding &ndash;&gt;
+    <dimen name="fixed_label_active">12sp</dimen> &lt;!&ndash; 选中字体大小 &ndash;&gt;
+    <dimen name="fixed_label_inactive">12sp</dimen> &lt;!&ndash; 未选中字体大小 &ndash;&gt;
+    <item name="fixed_label_active_to_inactive_ratio" format="float" type="dimen">1</item> &lt;!&ndash; 默认文字大小缩放比率 &ndash;&gt;-->
 </resources>

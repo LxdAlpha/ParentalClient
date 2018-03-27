@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/titlebar"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:background="@color/babyblue">
+    android:layout_height="@dimen/titlebar_height"
+    android:background="@color/bar_icon_pressed_color">
 
 
     <TextView
@@ -14,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:text="@string/double_click_exit"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/titlebar_text_title"
@@ -23,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:maxEms="8"
-        android:singleLine="true"/>
+        android:singleLine="true" />
 
 
     <ImageView
@@ -34,7 +33,17 @@
         android:clickable="true"
         android:contentDescription="@null"
         android:focusable="false"
-        android:src="@drawable/titlebar_back"/>
+        android:src="@drawable/titlebar_back" />
+
+    <TextView
+        android:id="@+id/titlebar_text_menu"
+        style="@style/titlebar_text_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dp"
+        android:maxEms="8"
+        android:singleLine="true"/>
 
     <ImageView
         android:id="@+id/titlebar_img_menu"

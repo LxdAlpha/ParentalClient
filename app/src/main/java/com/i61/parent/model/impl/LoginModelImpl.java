@@ -3,8 +3,8 @@ package com.i61.parent.model.impl;
 import android.text.TextUtils;
 
 import com.i61.parent.common.Urls;
-import com.i61.parent.common.data.BaseBean;
-import com.i61.parent.common.data.BaseBeanCallback;
+import com.i61.parent.common.data.GsonResponsePasare;
+import com.i61.parent.common.data.login.Value;
 import com.i61.parent.model.LoginModel;
 import com.i61.parent.model.entities.User;
 import com.i61.parent.presenter.OnLoginFinishedListerner;
@@ -13,16 +13,15 @@ import com.i61.parent.utils.MD5Utils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.util.logging.Handler;
-
 import okhttp3.Call;
-import okhttp3.Response;
 
 /**
  * Created by linxiaodong on 2018/3/8.
  */
 
 public class LoginModelImpl implements LoginModel {
+
+	private static final String TAG = "LoginModelImpl";
 
 	@Override
 	public void login(User user, final OnLoginFinishedListerner listener) {
@@ -42,52 +41,57 @@ public class LoginModelImpl implements LoginModel {
 				.addParams("phoneNum", userName)
 				.addParams("md5Password", MD5Utils.md5Password(password))
 				.build()
-				.execute(new BaseBeanCallback() {
+//				.execute(new BaseBeanCallback<Value>() {
+//					@Override
+//					public void onError(Call call, Exception e, int id) {
+//
+//					}
+//
+//					@Override
+//					public void onResponse(BaseBean response, int id) {
+//						LogUtils.e("onResponse:", response.toString());
+//
+//						LogUtils.e("onResponse", response.getValue().toString());
+//						boolean error = false;
+//						if (TextUtils.isEmpty(userName)) {
+//							listener.onUserNameError();
+//							error = true;
+//						}
+//						if (TextUtils.isEmpty(password)) {
+//							listener.onPasswordError();
+//							error = true;
+//						}
+//						if (!error) {
+//							listener.onSuccess();
+//						}
+//					}
+//				});
+				.execute(new StringCallback() {
 					@Override
 					public void onError(Call call, Exception e, int id) {
 						LogUtils.e("onError:", e.getMessage());
 					}
 
 					@Override
-					public void onResponse(BaseBean response, int id) {
-						LogUtils.e("response:", response.toString());
-						String errorInfo = "";
-						if (response.getResultCode().code == 0) {
-							LogUtils.e("onResponse:", response.getValue().toString());
-						} else {
-							LogUtils.e("onResponse:", response.getResultCode().message);
-							errorInfo = response.getResultCode().message;
+					public void onResponse(String response, int id) {
+						LogUtils.e("onResponse:", response);
+						GsonResponsePasare<Value> pasare = new GsonResponsePasare<Value>(){};
+						Value value = pasare.deal(response);
+						LogUtils.e("value", value.getAccountList().get(0).getNickName());
+						boolean error = false;
+						if (TextUtils.isEmpty(userName)) {
+							listener.onUserNameError();
+							error = true;
 						}
-						if (!TextUtils.isEmpty(errorInfo)) {
-							listener.onError(errorInfo);
-						} else {
+						if (TextUtils.isEmpty(password)) {
+							listener.onPasswordError();
+							error = true;
+						}
+						if (!error) {
 							listener.onSuccess();
 						}
 					}
 				});
-//                .execute(new StringCallback() {
-//                    @Override
-//                    public void onError(Call call, Exception e, int id) {
-//                        LogUtils.e("onError:",e.getMessage() );
-//                    }
-//
-//                    @Override
-//                    public void onResponse(String response, int id) {
-//                        LogUtils.e("onResponse:", response);
-//                        boolean error = false;
-//                        if(TextUtils.isEmpty(userName)){
-//                            listener.onUserNameError();
-//                            error = true;
-//                        }
-//                        if(TextUtils.isEmpty(password)){
-//                            listener.onPasswordError();
-//                            error = true;
-//                        }
-//                        if(!error){
-//                            listener.onSuccess();
-//                        }
-//                    }
-//                });
 	   /* new android.os.Handler().postDelayed(new Runnable() {
 			@Override
             public void run() {
