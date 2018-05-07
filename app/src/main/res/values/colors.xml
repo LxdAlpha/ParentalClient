@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 半透明颜色值 -->
+    <color name="RlBg">#e0000000</color>
+    <!-- 透明颜色值 -->
+    <color name="RlBg2">#00000000</color>
+    <!-- 白色颜色值 -->
+    <color name="white">#ffffff</color>
+    <color name="babyblue">#1eddff</color>
+    <!--底部导航栏颜色-->
+    <color name="bar_icon_pressed_color">#f2594b</color>
+
+
+    <color name="primary">#3F51B5</color>
+    <color name="primaryDark">#303F9F</color>
+    <color name="accent">#4CAF50</color>
+    <color name="primaryText">#212121</color>
+    <color name="edit_text_normal_color">#808080</color>    <!--修改昵称的EditText下划线颜色  正常（未点击）情况下-->
+    <color name="edit_text_activated_color">#000000</color><!--修改昵称的EditText下划线颜色  点击（活跃）情况下-->
+</resources>

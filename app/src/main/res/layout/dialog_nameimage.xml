@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_round_white"
+    style="@style/PopupDialog">
+
+    <ImageButton
+        android:id="@+id/dialog_nameimage_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:background="@drawable/popover_icon_close"
+        android:layout_gravity="right"/>
+
+    <ImageView
+        android:id="@+id/dialog_nameimage_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"/>
+
+    <EditText
+        android:id="@+id/dialog_nameimage_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:hint="为你的画作取个名吧"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="#000000"/>
+
+    <Button
+        android:id="@+id/dialog_nameimage_confrim"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/red_button"
+        android:text="确认"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
+
+
+
+

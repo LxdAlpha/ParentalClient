@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6"
+    android:orientation="vertical">
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/submit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/work_title_groundimage"
+            android:maxLines="1"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:text="第88节：视觉游戏-斑马的新居          "
+            android:textColor="#ffffff"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/submit_mainpanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:text="作业内容"
+            android:textColor="#55515f"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/submit_work_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1、发挥你的想象力绘制一个小象，发挥你的想象力绘制一个大象。\n2、跟爸爸妈妈讲讲你的小怪物的故事，跟爷爷奶奶讲讲你的小怪物的故事。"
+            android:textColor="#55515f"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#e6e6e6" />
+
+
+        <RelativeLayout android:id="@+id/relativeTop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/txtHide"
+                android:id="@+id/image_left"
+                android:background="@drawable/work_image_ground"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/image_button_left"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/work_addimage_child"
+                    android:scaleType="fitCenter"
+                    />
+                <TextView
+                    android:id="@+id/image_button_text_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="课堂作业"
+                    android:layout_centerInParent="true"
+                    android:textColor="#55515f"
+                    />
+            </RelativeLayout>
+
+
+            <TextView android:id="@+id/txtHide"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/txtHide"
+                android:id="@+id/image_right"
+                android:background="@drawable/work_image_ground"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/image_button_right"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/work_addimage_child" />
+                <TextView
+                    android:id="@+id/image_button_text_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="亲子作业"
+                    android:textColor="#55515f"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/submit_homework_button"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_button"
+                android:layout_below="@+id/image_right"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:text="提交作业"
+                android:textColor="#ffffff"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/submit_lottery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="100dp"
+        android:padding="10dp"
+        android:background="@drawable/bg_guajiang"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mascot"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交作业即可抽奖，就有机会获得高额奖励哦~"/>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+

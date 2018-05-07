@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">画啦啦</string>
+    <!-- 网络相关 -->
+    <string name="network_connect_error">请检查网络连接</string>
+    <!-- 共用的String -->
+    <string name="next">下一步</string>
+    <string name="submit">提  交</string>
+    <string name="text_finish">完成</string>
+    <string name="is_not_empty">不能为空</string>
+    <string name="double_click_exit">再次点击返回键切换到桌面</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--Fragment-->
+    <string name="fragment_review">点评</string>
+    <string name="fragment_work">作业</string>
+    <string name="fragment_news">消息</string>
+    <string name="fragment_personal">个人中心</string>
+
+    <string name="camera_permission_confirmation">This app demonstrates the usage of CameraView. In order to do that, it needs permission to access camera.</string>
+    <string name="camera_permission_not_granted">Camera app cannot do anything without camera permission.</string>
+    <string name="picture_taken">Picture taken</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="switch_flash">Switch flash</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="flash_auto">Flash auto</string>
+    <string name="flash_off">Flash off</string>
+    <string name="flash_on">Flash on</string>
+
+
+    <string name="crop_image_menu_crop">完成</string>
+</resources>

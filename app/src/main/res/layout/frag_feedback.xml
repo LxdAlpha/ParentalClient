@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:orientation="vertical"
+    android:background="#eeeeee">
+
+    <TextView
+        android:id="@+id/frag_feedback_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:text="请填写您要反馈的内容，画啦啦收到后将及时处理和改进！"/>
+
+    <EditText
+        android:id="@+id/frag_feedback_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/edit_text"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/frag_feedback_title"
+        android:maxLines="15"
+        android:minLines="15">
+    </EditText>
+
+    <TextView
+        android:id="@+id/frag_feedback_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你还可以输入300字"
+        android:layout_below="@+id/frag_feedback_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"/>
+
+    <TextView
+        android:id="@+id/frag_feedback_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你还没填写反馈内容哦"
+        android:layout_below="@+id/frag_feedback_count"
+        android:textColor="#FF0000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/frag_feedback_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:background="@drawable/red_button"
+        android:layout_below="@+id/frag_feedback_notice"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"/>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 后台url http://par.61draw.com -->
+    <string name="url">http://par.61draw.com/</string>
+    <!-- 登陆功能的url -->
+    <string name="url_get_login">/login</string>
+    <!-- 用户的url -->
+    <string name="url_base_users">/users</string>
+</resources>

@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.i61.parent"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+
+        //信鸽推送的相关配置
+        ndk {
+            //根据需要 自行选择添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                XG_ACCESS_ID:"2100283762",
+                XG_ACCESS_KEY : "A8QIFI53N51J",
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //信鸽jar 若使用com.tencent.xinge:xinge:3.2.2-release则在模拟器上不能收到推送，改成下面的依赖便可收到
+    compile 'com.tencent.xinge:xinge:3.2.3_1-beta'
+    //信鸽wup包
+    compile 'com.tencent.wup:wup:1.0.0.E-release'
+    //信鸽mid包
+    compile 'com.tencent.mid:mid:4.0.6-release'
+    //上拉下拉框架
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //剪切图片
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.facebook.fresco:fresco:1.8.1'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:support-vector-drawable:26.0.0-beta1'
+    implementation 'com.android.support:support-v4:26.0.0-beta1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //网络库-张鸿洋的okHttp封装库
+    compile 'com.zhy:okhttputils:2.6.2'
+    //Gson
+    compile 'com.google.code.gson:gson:2.7'
+    //控件依赖注入
+    compile 'com.jakewharton:butterknife:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    //一个android的orm 和 ioc 框架
+    compile 'org.kymjs.kjframe:kjframe:2.6'
+    //导入kesarlibrary工具包
+    compile project(':kesarlibrary')
+
+    compile project(path: ':library')
+    //底部导航 Bottom navigation https://github.com/Ashok-Varma/BottomNavigation
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    //StatusBarUtil 状态栏工具类（实现沉浸式状态栏/变色状态栏） https://jaeger.itscoder.com/android/2016/03/27/statusbar-util.html
+    compile 'com.jaeger.statusbarutil:library:1.5.0'
+    //QMUI Android UI 框架
+    compile 'com.qmuiteam:qmui:1.0.6'
+}
